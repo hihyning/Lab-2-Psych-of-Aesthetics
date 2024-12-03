@@ -1,0 +1,60 @@
+/* Adding new styles for color experiment while keeping existing styles */
+.color-display-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    margin: 2rem 0;
+}
+
+.color-circle {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+.rating-container {
+    width: 80%;
+    max-width: 600px;
+    margin: 2rem auto;
+    text-align: center;
+}
+
+#rating-slider {
+    width: 100%;
+    margin: 1rem 0;
+    -webkit-appearance: none;
+    height: 2px;
+    background: #EEEEEE;
+    outline: none;
+}
+
+#rating-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--accent-color);
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+#rating-slider::-webkit-slider-thumb:hover {
+    transform: scale(1.2);
+}
+
+.rating-labels {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 0.5rem;
+}
+
+.rating-labels span {
+    font-family: 'Space Grotesk', sans-serif;
+    color: var(--text-color);
+}
+
+/* Keep all existing styles from the previous CSS file */
