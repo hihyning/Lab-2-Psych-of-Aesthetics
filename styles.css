@@ -486,7 +486,7 @@ ol li {
     padding: 2rem;
     border-radius: 8px;
     max-width: 800px;
-    padding-bottom: 4rem; /* Add extra padding at bottom */
+    padding-bottom: 2rem; /* Add extra padding at bottom */
 }
 
 .debrief-info p{
