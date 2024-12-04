@@ -361,27 +361,63 @@ ol li {
     text-align: center;
 }
 
+/* Styling the slider line */
 #rating-slider {
     width: 100%;
-    margin: 1rem 0;
-    height: 2px;
+    height: 4px; /* Line thickness */
+    background: #EEEEEE; /* Light grey background */
     outline: none;
-    background: #1300f1;
+    margin: 2rem 0;
 }
 
+/* Chrome/Safari - Styling the circle (thumb) */
 #rating-slider::-webkit-slider-thumb {
     -webkit-appearance: none;
-    appearance: none;
-    width: 20px;
-    height: 20px;
-    border-radius: 10%;
+    width: 25px; /* Circle size */
+    height: 25px;
+    border-radius: 50%; /* Makes it perfectly round */
+    background: var(--accent-color); /* Your green accent color */
     cursor: pointer;
-    transition: transform 0.2s;
-    background:#1300f1;
+    border: 3px solid white; /* White border around circle */
+    box-shadow: 0 0 2px rgba(0,0,0,0.2); /* Subtle shadow */
+    margin-top: -10px; /* Centers the circle on the line */
 }
 
+/* Firefox - Styling the circle (thumb) */
+#rating-slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: var(--accent-color);
+    cursor: pointer;
+    border: 3px solid white;
+    box-shadow: 0 0 2px rgba(0,0,0,0.2);
+}
+
+/* Styling the active track (line) */
+#rating-slider::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 4px;
+    background: var(--accent-color);
+    border-radius: 2px;
+}
+
+#rating-slider::-moz-range-track {
+    width: 100%;
+    height: 4px;
+    background: var(--accent-color);
+    border-radius: 2px;
+}
+
+/* Optional: Add hover effect to the thumb */
 #rating-slider::-webkit-slider-thumb:hover {
     transform: scale(1.2);
+    transition: transform 0.2s ease;
+}
+
+#rating-slider::-moz-range-thumb:hover {
+    transform: scale(1.2);
+    transition: transform 0.2s ease;
 }
 
 .rating-labels {
