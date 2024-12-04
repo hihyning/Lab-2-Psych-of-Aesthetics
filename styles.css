@@ -106,8 +106,9 @@ h3 {
 
 .title img{
     height: 1em;
-    margin-right: 0.5%;
+    margin-right: 0.5rem;
     justify-content: center;
+    margin-top: 0.5rem;
 }
 
 .title img:hover{
