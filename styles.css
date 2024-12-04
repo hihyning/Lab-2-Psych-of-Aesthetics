@@ -368,6 +368,7 @@ ol li {
     background: #EEEEEE; /* Light grey background */
     outline: none;
     margin: 2rem 0;
+    -webkit-appearance: none;
 }
 
 /* Chrome/Safari - Styling the circle (thumb) */
