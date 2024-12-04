@@ -110,6 +110,20 @@ h3 {
     justify-content: center;
 }
 
+.title img:hover{
+    animation: spin 0.5s ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
 .section {
     margin-bottom: 0;
     border-top: 2px solid #1300f1;;
