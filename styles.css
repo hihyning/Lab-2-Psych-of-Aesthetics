@@ -1,4 +1,344 @@
 /* Adding new styles for color experiment while keeping existing styles */
+:root {
+    --accent-color: #1300f1;
+    --bg-color: #FFFFFF;
+    --text-color: #111111;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+.container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0%;
+}
+
+.header {
+    background-color: var(--accent-color);
+    padding: 0.3rem;
+    color: white;
+    height: auto;
+}
+
+h1 {
+    font-size: 8rem;
+    letter-spacing: -0.05em;
+    font-family: "Urbanist", sans-serif;
+    font-weight: 400;
+    margin: none;
+    padding: none;
+    text-align: justify;
+}
+
+h2 {
+    font-family: "Urbanist", sans-serif;
+    letter-spacing: -0.02em;
+    font-weight: 400;
+    font-size: 2em;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    letter-spacing: -0.02em;
+    font-size: 3em;
+    font-weight: 400;
+    text-align: left;
+    margin-bottom: 1%;
+    line-height: 0.9em;
+}
+
+.section p {
+    font-family: 'Space Grotesk', sans-serif;
+    letter-spacing: -0.02em;
+    font-weight: 400;
+    margin-left: 1.5rem;
+    line-height: 0.5em;
+    font-size: 2em;
+    color: dark grey;
+}
+
+.section p:hover{
+ color: #1300f1;
+}
+
+.study-info {
+    list-style: none; /* Removes default bullets */
+    padding-left: 0; /* Removes default padding */
+}
+
+.study-info li {
+    margin-bottom: 1rem; /* Space between items */
+    position: relative;
+    padding-left: 0.5rem; /* Space for custom bullet */
+}
+
+.study-info li:before {
+    content: "•"; /* Custom bullet */
+    position: absolute;
+    font-size: 2.5em;
+    margin-top: -0.9rem;
+    color: #1300f1; /* Your accent color */
+}
+
+.title {
+    font-family: 'Space Grotesk', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: -0.05em;
+    padding-left: 2%;
+    padding-right: 2%;
+    font-size: 2em;
+    color: var(--accent-color);
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+}
+
+.title img{
+    height: 1em;
+    margin-right: 0.5%;
+    justify-content: center;
+}
+
+.section {
+    margin-bottom: 0;
+    border-top: 2px solid #1300f1;;
+    padding: 1rem;
+}
+
+.scroll-container {
+    width: 100vw;
+    height: 10em;
+    overflow: hidden;
+    position: relative;
+    background: #ffffff;
+}
+
+.scroll-content {
+    display: flex;
+    animation: scroll 10s linear infinite;
+    /* Double the content for seamless loop */
+    height: 200%;
+}
+
+.image-group {
+    display: flex;
+    width: 100%;
+}
+
+.scroll-content img {
+    height: 50%; /* 5 images per group */
+    max-height: 50vh;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%); /* Move by half width for seamless loop */
+    }
+}
+
+/* Optional hover pause */
+.scroll-container:hover .scroll-content {
+    animation-play-state: paused;
+}
+
+.button {
+    color: var(--accent-color);
+    background-color: white;
+    border: none;
+    border-bottom: 2px solid #1300f1;;
+    border-top: 2px solid #1300f1;;
+    padding: 0rem 2rem;
+    cursor: pointer;
+    transition: opacity 0.3s;
+    font-family: 'Space Grotesk', sans-serif;
+    letter-spacing: -0.02em;
+    font-size: 3em;
+    font-weight: 400;
+    text-align: left;
+    width: 100%;
+    margin-top: 0.3em;
+}
+
+#experiment .button {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100; /* Ensures button stays on top */
+}
+
+#start-button, #begintrials-button{
+    position: absolute;
+    bottom: 0;
+}
+
+.button:hover {
+    background-color: var(--accent-color);
+    color: white;
+    transition: 0.3s ease-in-out
+}
+
+.compositions-container {
+    display: flex;
+    justify-content: space-between; /* or center, but not both */
+    align-items: center;
+    gap: 1rem;
+    margin: 2rem auto; /* auto margins for horizontal centering */
+    width: 50%;
+}
+
+.composition {
+    flex: 1;
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+    transition: transform 0.2s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.composition:hover {
+    transform: scale(1.1);
+}
+
+.stimulus-container {
+    width: 100%;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.stimulus-container img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 5px;
+    background-color: #EEEEEE;
+    margin: 2rem;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    background-color: var(--accent-color);
+    transition: width 0.3s;
+}
+
+.instruction-text {
+    text-align: center;
+    margin-top: 1rem;
+    color: var(--text-color);
+}
+
+.chart-container {
+    justify-content: space-between; /* or center, but not both */
+    align-items: center;
+    gap: 1rem;
+    margin: 2rem auto; /* auto margins for horizontal centering */
+    width: 50%;
+    width: 70%;
+    height: auto;
+    padding: 1rem;
+}
+
+.results-text {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 1.1rem;
+}
+
+.save-section {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 2px solid #1300f1;;
+}
+
+.hidden {
+    display: none;
+}
+
+ol {
+    margin-left: 2rem;
+    margin-bottom: 2rem;
+}
+
+ol li {
+    margin-bottom: 0.5rem;
+}
+
+#debrief {
+    padding-top: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    width: 100%;
+    border-top:  2px solid #1300f1;
+}
+
+#debrief p{
+    font-family: 'Space Grotesk', sans-serif;
+    letter-spacing: -0.02em;
+    font-weight: 400;
+    margin-left: 1em;
+    line-height: 1.1em;
+    font-size: 1.3em;
+    color: dark grey;
+}
+
+#debrief a {
+    color: #1300f1;
+}
+
+#debrief a:hover{
+    font-style: italic;
+}
+
+#debrief h3 {
+    margin-top: 0.5rem;
+    text-align: left;
+    margin-left: 0.5em;
+    margin-bottom: 0.5rem;
+}
+
+.section2 p {
+    font-family: 'Space Grotesk', sans-serif;
+    letter-spacing: -0.02em;
+    font-weight: 400;
+    margin-left: 1em;
+    line-height: 1em;
+    font-size: 1.5em;
+    color: dark grey;
+}
+
+.section2 h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    letter-spacing: -0.02em;
+    font-size: 3em;
+    font-weight: 400;
+    margin-bottom: 0%;
+    text-align: left;
+    margin-left: 1em;
+}
 .color-display-container {
     display: flex;
     justify-content: center;
@@ -24,10 +364,9 @@
 #rating-slider {
     width: 100%;
     margin: 1rem 0;
-    -webkit-appearance: none;
     height: 2px;
-    background: #EEEEEE;
     outline: none;
+    background: #1300f1;
 }
 
 #rating-slider::-webkit-slider-thumb {
@@ -36,9 +375,9 @@
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    background: var(--accent-color);
     cursor: pointer;
     transition: transform 0.2s;
+    background:#1300f1;
 }
 
 #rating-slider::-webkit-slider-thumb:hover {
@@ -57,4 +396,116 @@
     color: var(--text-color);
 }
 
-/* Keep all existing styles from the previous CSS file */
+.results-graphic {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.color-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.result-circle {
+    aspect-ratio: 1;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.5em;
+    font-weight: 500;
+}
+
+.results-stats {
+    margin-top: 2rem;
+    padding: 2rem;
+    font-family: 'Space Grotesk', sans-serif;
+    width: 100%;
+}
+
+.results-graphic h3 {
+    text-align: center;
+}
+
+.results-graphic h4 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.5em;
+    margin: 2rem 0 1rem 0;
+    color: var(--accent-color);
+}
+
+.results-summary,
+.results-detailed,
+.study-debrief {
+    padding-bottom: 1.5rem 0;
+    border-top: 2px solid var(--accent-color);
+}
+
+.results-summary h3 {
+    margin-bottom: none;
+}
+
+.results-summary p {
+    font-size: 1.2em;
+    text-align: center;
+    line-height: 1.5;
+}
+
+.results-detailed p,
+.study-debrief p {
+    font-size: 1.1em;
+    margin: 1rem 0;
+    line-height: 1em;
+    text-align: left;
+}
+
+.dynamic-text {
+    color: var(--accent-color);
+    font-weight: 500; /* optional: make it slightly bolder */
+}
+
+.download-section {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 2px solid var(--accent-color);
+    text-align: center;
+}
+
+.download-section .button {
+    display: inline-block;
+    margin: 0 auto;
+}
+
+.results-summary-container {
+    padding: 2rem;
+    padding-bottom: 0%;
+    border-radius: 8px;
+    max-width: 800px;
+}
+
+.debrief-info p{
+    color:#1300f1;
+    font-size: 1em;
+}
+
+.debrief-info li:before {
+    content: "•"; /* Custom bullet */
+    position: absolute;
+    font-size: 2.5em;
+    margin-top: -0.7rem;
+    color: #1300f1; /* Your accent color */
+}
+
+.debrief-info {
+    list-style: none; /* Removes default bullets */
+    padding-left: 0; /* Removes default padding */
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-left: 3em;
+}
